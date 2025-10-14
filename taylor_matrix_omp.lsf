@@ -1,0 +1,10 @@
+#!/bin/bash
+#BSUB -J OMP_2_threads_run2
+#BSUB -W 01:00
+#BSUB -n 1
+#BSUB -o logs/output_OMP_2_threads_run2_%J.out
+#BSUB -e logs/error_OMP_2_threads_run2_%J.err
+#BSUB -M 512MB
+
+export OMP_NUM_THREADS=2
+./taylor_matrix_omp	

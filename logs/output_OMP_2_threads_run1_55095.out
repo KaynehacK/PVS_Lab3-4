@@ -1,0 +1,62 @@
+Sender: LSF System <lsfadmin@node3.kepler.hpc.local>
+Subject: Job 55095: <OMP_2_threads_run1> in cluster <kepler.lsf.hpc.local> Done
+
+Job <OMP_2_threads_run1> was submitted from host <mgr.kepler.hpc.local> by user <kaynehack18.gmail.com> in cluster <kepler.lsf.hpc.local> at Tue Oct 14 21:30:13 2025
+Job was executed on host(s) <node3.kepler.hpc.local>, in queue <normal>, as user <kaynehack18.gmail.com> in cluster <kepler.lsf.hpc.local> at Tue Oct 14 21:30:14 2025
+</home/kaynehack18.gmail.com> was used as the home directory.
+</home/kaynehack18.gmail.com/Lab_3_4> was used as the working directory.
+Started at Tue Oct 14 21:30:14 2025
+Terminated at Tue Oct 14 21:30:24 2025
+Results reported at Tue Oct 14 21:30:24 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J OMP_2_threads_run1
+#BSUB -W 01:00
+#BSUB -n 1
+#BSUB -o logs/output_OMP_2_threads_run1_%J.out
+#BSUB -e logs/error_OMP_2_threads_run1_%J.err
+#BSUB -M 512MB
+
+export OMP_NUM_THREADS=2
+./taylor_matrix_omp	
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   12.93 sec.
+    Max Memory :                                 8 MB
+    Average Memory :                             8.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   8 sec.
+    Turnaround time :                            11 sec.
+
+The output (if any) follows:
+
+Calculating Taylor series for e^A with 500000000 terms using OpenMP (2 threads).
+Matrix A:
+  0.100000   0.400000   0.200000 
+  0.300000   0.000000   0.500000 
+  0.600000   0.200000   0.100000 
+
+Result e^A (Taylor approximation):
+  1.263789   0.469581   0.345018 
+  0.500993   1.140883   0.592488 
+  0.737440   0.356041   1.252766 
+
+Time taken: 6.822169 seconds
+
+
+PS:
+
+Read file <logs/error_OMP_2_threads_run1_55095.err> for stderr output of this job.
+

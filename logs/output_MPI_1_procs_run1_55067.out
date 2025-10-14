@@ -1,0 +1,64 @@
+Sender: LSF System <lsfadmin@node5.kepler.hpc.local>
+Subject: Job 55067: <MPI_1_procs_run1> in cluster <kepler.lsf.hpc.local> Done
+
+Job <MPI_1_procs_run1> was submitted from host <mgr.kepler.hpc.local> by user <kaynehack18.gmail.com> in cluster <kepler.lsf.hpc.local> at Tue Oct 14 18:31:35 2025
+Job was executed on host(s) <node5.kepler.hpc.local>, in queue <normal>, as user <kaynehack18.gmail.com> in cluster <kepler.lsf.hpc.local> at Tue Oct 14 18:31:35 2025
+</home/kaynehack18.gmail.com> was used as the home directory.
+</home/kaynehack18.gmail.com/Lab_3_4> was used as the working directory.
+Started at Tue Oct 14 18:31:35 2025
+Terminated at Tue Oct 14 18:31:44 2025
+Results reported at Tue Oct 14 18:31:44 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#
+#BSUB -J MPI_1_procs_run1        
+#BSUB -W 00:05             
+#BSUB -n 1                       
+#BSUB -R "span[ptile=1]" 
+#BSUB -o logs/output_MPI_1_procs_run1_%J.out
+#BSUB -e logs/error_MPI_1_procs_run1_%J.err
+#BSUB -M 512MB
+ 
+
+module load mpi/openmpi-x86_64
+mpirun --bind-to core --map-by core ./taylor_matrix_mpi
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   42.56 sec.
+    Max Memory :                                 51 MB
+    Average Memory :                             51.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              20
+    Max Threads :                                56
+    Run time :                                   7 sec.
+    Turnaround time :                            9 sec.
+
+The output (if any) follows:
+
+Matrix A:
+  0.100000   0.400000   0.200000 
+  0.300000   0.000000   0.500000 
+  0.600000   0.200000   0.100000 
+
+Result e^A (Taylor approximation):
+  1.263789   0.469581   0.345018 
+  0.500993   1.140883   0.592488 
+  0.737440   0.356041   1.252766 
+
+Time taken: 2.395612 seconds
+
+
+PS:
+
+Read file <logs/error_MPI_1_procs_run1_55067.err> for stderr output of this job.
+

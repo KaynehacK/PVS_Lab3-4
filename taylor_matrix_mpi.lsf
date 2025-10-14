@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#BSUB -J MPI_1_procs_run3        
+#BSUB -W 00:05             
+#BSUB -n 1                       
+#BSUB -R "span[ptile=1]" 
+#BSUB -o logs/output_MPI_1_procs_run3_%J.out
+#BSUB -e logs/error_MPI_1_procs_run3_%J.err
+ 
+ulimit -l unlimited
+module load mpi/openmpi-x86_64
+mpirun --bind-to core --map-by core ./taylor_matrix_mpi
